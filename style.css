@@ -1,0 +1,265 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #222;
+}
+
+.header {
+    text-align: center;
+    padding: 45px 20px;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.header h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.header p {
+    font-size: 16px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 25px 15px;
+}
+
+.filters button {
+    border: none;
+    background: white;
+    color: #333;
+    padding: 11px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 8px #00000012;
+    transition: 0.3s ease;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.image-count {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    padding: 0 25px 40px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.gallery-item {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #ddd;
+    box-shadow: 0 5px 15px #00000018;
+    cursor: pointer;
+    animation: fadeIn 0.4s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 15px 15px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    background: linear-gradient(transparent, #000d);
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #000e;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 70px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox-content {
+    text-align: center;
+    max-width: 100%;
+}
+
+.lightbox-content img {
+    display: block;
+    max-width: 85vw;
+    max-height: 75vh;
+    margin: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-content h2 {
+    color: white;
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.lightbox-content p {
+    color: #ddd;
+    margin-top: 8px;
+}
+
+.close,
+.nav-btn {
+    position: absolute;
+    color: white;
+    border: none;
+    background: #ffffff25;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.close:hover,
+.nav-btn:hover {
+    background: #2563eb;
+}
+
+.close {
+    top: 20px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    font-size: 32px;
+}
+
+.nav-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #172033;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 32px 15px;
+    }
+
+    .header h1 {
+        font-size: 29px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 0 12px 25px;
+    }
+
+    .gallery-item {
+        height: 165px;
+    }
+
+    .filters {
+        gap: 7px;
+        padding: 18px 10px;
+    }
+
+    .filters button {
+        padding: 9px 13px;
+    }
+
+    .lightbox {
+        padding: 60px 12px;
+    }
+
+    .lightbox-content img {
+        max-width: 90vw;
+        max-height: 65vh;
+    }
+
+    .prev {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    .nav-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+}

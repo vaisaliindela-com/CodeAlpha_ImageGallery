@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Image Gallery</h1>
+        <p>Discover beautiful pictures from around the world</p>
+    </header>
+
+    <nav class="filters">
+        <button class="active" data-category="all">All</button>
+        <button data-category="nature">Nature</button>
+        <button data-category="travel">Travel</button>
+        <button data-category="animals">Animals</button>
+        <button data-category="cities">Cities</button>
+        <button data-category="food">Food</button>
+        <button data-category="cars">Cars</button>
+    </nav>
+
+    <main>
+        <p id="image-count" class="image-count"></p>
+        <section id="gallery" class="gallery"></section>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog"
+         aria-modal="true" aria-label="Image preview">
+
+        <button class="close" id="close" aria-label="Close">&times;</button>
+        <button class="nav-btn prev" id="prev" aria-label="Previous image">&#10094;</button>
+
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <h2 id="lightbox-title"></h2>
+            <p id="lightbox-count"></p>
+        </div>
+
+        <button class="nav-btn next" id="next" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <footer>
+        <p>Image Gallery | HTML CSS JavaScript</p>
+    </footer>
+
+</body>
+</html>
